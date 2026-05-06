@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from schemas.transaction import TransactionIn
-from services.etl_service import process_transactions
+from app.schemas.transaction import TransactionIn
+from app.services.etl_service import process_transactions
 from app.core.database import SessionLocal
-from models.transaction import Transaction
+from app.models.transaction import Transaction
 
 router = APIRouter()
 

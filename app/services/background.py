@@ -1,10 +1,10 @@
 
 import asyncio
 import logging
-from services.stream_service import generate_transaction
-from services.etl_service import process_transactions
-from models.transaction import Transaction
-from core.database import SessionLocal
+from app.services.stream_service import generate_transaction
+from app.services.etl_service import process_transactions
+from app.models.transaction import Transaction
+from app.core.database import SessionLocal
 
 async def stream_transactions():
     while True:
