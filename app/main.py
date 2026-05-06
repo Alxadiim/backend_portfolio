@@ -24,10 +24,10 @@ app.add_middleware(
 app.include_router(transactions.router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
 app.include_router(profile.router, prefix="/api")
-
 @app.get("/")
 def root():
     return {"status": "ok"}
+
 
 # Background stream sécurisé
 @app.on_event("startup")
@@ -43,8 +43,3 @@ async def start_stream():
             logging.error(f"Stream crashed: {e}")
 
     asyncio.create_task(safe_stream())
-
-
-
-# Frontend
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
