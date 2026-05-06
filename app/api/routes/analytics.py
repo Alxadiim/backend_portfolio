@@ -2,7 +2,7 @@ from app.api.routes.transactions import get_db
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException
 from app.core.database import SessionLocal
-from models.transaction import Transaction
+from app.models.transaction import Transaction
 from sqlalchemy import func
 from datetime import datetime, timedelta
 
