@@ -43,3 +43,7 @@ async def start_stream():
             logging.error(f"Stream crashed: {e}")
 
     asyncio.create_task(safe_stream())
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
